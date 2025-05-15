@@ -1,22 +1,25 @@
 server:
+
   port: ${PORT:${SERVERS_PORT:0}}
 
 spring:
   jpa:
-    hibernate:
-      ddl-auto: update
+    hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
   datasource:
-    driver-class-name: org.postgresql.Driver  # Cambiar el driver a PostgreSQL
-    url: jdbc:postgresql://localhost:5432/ms_auth  # Cambiar el URL para PostgreSQL
-    username: postgres  # Cambiar el nombre de usuario a 'postgres' o el que uses
-    password: 123456  # Cambiar la contraseña por la correcta de tu servidor PostgreSQL
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ms_auth
+    username: root
+    password:
 
 eureka:
   client:
-    service-url:
+    serviceUrl:
+      #defaultZone: http://localhost:8090/eureka
       defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
-
   instance:
+    #hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+jwt:
+  secret: secret
