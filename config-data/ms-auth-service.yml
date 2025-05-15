@@ -11,7 +11,7 @@ spring:
     driver-class-name: org.postgresql.Driver  # Cambiar el driver a PostgreSQL
     url: jdbc:postgresql://localhost:5432/ms_auth  # Cambiar el URL para PostgreSQL
     username: postgres  # Cambiar el nombre de usuario a 'postgres' o el que uses
-    password: postgres_password  # Cambiar la contraseña por la correcta de tu servidor PostgreSQL
+    password: 123456  # Cambiar la contraseña por la correcta de tu servidor PostgreSQL
 
 eureka:
   client:
